@@ -1,0 +1,13 @@
+https://verbose-acorn-v6rjvrg5975vhx55-3000.app.github.dev/api/todos
+
+VISUALIZZA: curl https://verbose-acorn-v6rjvrg5975vhx55-3000.app.github.dev/api/todos
+
+AGGIUNTA: curl -X POST https://verbose-acorn-v6rjvrg5975vhx55-3000.app.github.dev/api/todos \
+-H "Content-Type: application/json" \
+-d '{"title":"prima cosa da fare"}'
+
+MODIFICA: curl -X PUT https://verbose-acorn-v6rjvrg5975vhx55-3000.app.github.dev/api/todos/1779450369243 \
+-H "Content-Type: application/json" \
+-d '{"title":"todo modificato"}'
+
+ELIMINA: curl -X DELETE https://verbose-acorn-v6rjvrg5975vhx55-3000.app.github.dev/api/todos/1779450369243
