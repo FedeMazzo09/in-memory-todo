@@ -4,10 +4,11 @@ export default {
   getAll: () => {
     return todos
   },
-  create: title => {
+  create: (title, colore) => {
     const newTodo = {
       id: Date.now().toString(),
       title,
+      colore,
       isCompleted: false
     }
 
@@ -21,6 +22,7 @@ export default {
     const updatedTodo = {
       ...todos[targetIndex],
       title: newTodo.title ?? todos[targetIndex].title,
+      colore: newTodo.colore ?? todos[targetIndex].colore,
       isCompleted: newTodo.isCompleted ?? todos[targetIndex].isCompleted,
     }
     const newTodos = [
