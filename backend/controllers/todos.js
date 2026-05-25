@@ -5,16 +5,17 @@ export default {
     return res.json(todoModel.getAll())
   },
   createTodo: (req, res) => {
-    const { title } = req.body;
+    const { title, colore } = req.body;
     if (!title || title.trim() === "") {
       return res.status(400).json({ error: "Title is required and cannot be empty." });
     }
-    return res.status(201).json(todoModel.create(title));
+    return res.status(201).json(todoModel.create(title, colore));
   },
   editTodo: (req, res) => {
     const targetId = req.params.id
     const updatedTodo = todoModel.edit(targetId, {
       title: req.body.title,
+      colore: req.body.colore,
       isCompleted: req.body.isCompleted
     })
     if (!updatedTodo) {
